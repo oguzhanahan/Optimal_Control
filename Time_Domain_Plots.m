@@ -7,9 +7,12 @@ hold on
 plot(t,x_cd.signals.values(:,I),'LineWidth',1)
 hold on
 plot(t,x_cc.signals.values(:,I),'r--','LineWidth',1)
+hold on
+plot(t,x_cdc.signals.values(:,I),'b','LineWidth',1)
+
 met1=num2str(I);
 met2='. Kat Yer Degisimi [m]';
-legend('Kontrolsüz','Ayrik Kontrollü','Sürekli Kontrollü')
+legend('Kontrolsüz','Ayrik Kontrollü','Sürekli Kontrollü','Dinamik Output Feedback Kontrol')
 ylabel(strcat(met1,met2))
 xlabel 'zaman [s]'
 ylim([-0.5 1.5])
@@ -23,7 +26,9 @@ figure
 plot(t,ud,'r--','LineWidth',4)
 hold on
 plot(t,uc,'k','LineWidth',4)
+hold on
+plot(t,udc,'b','LineWidth',4)
 xlabel ('zaman [s]')
 ylabel ('Kontrol Kuvveti [N]')
-legend('Ayrik Kontrolcü','Sürekli Kontrolcü')
+legend('Ayrik Kontrolcü','Sürekli Kontrolcü','Dinamik Output Feedback Kontrolcü')
 grid
